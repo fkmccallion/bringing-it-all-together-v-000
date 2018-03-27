@@ -89,8 +89,8 @@ class Dog
   end
 
   def self.new_from_db(dog_array)
-    dog = Dog.new(dog_array_to_hash(dog_array))
-    dog
+Dog.new(dog_array_to_hash(dog_array))
+
   end
 
   def self.find_by_name(name)
