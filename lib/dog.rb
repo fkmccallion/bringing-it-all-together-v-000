@@ -59,10 +59,11 @@ class Dog
       WHERE id = ?
     SQL
 
-    dog = DB[:conn].execute(sql, id).flatten
-    binding.pry
-    dog_hash = {:id => id}
-
+    dog_array = DB[:conn].execute(sql, id).flatten
+    dog_hash = {:id => dog[0], :name => dog[1], :breed => dog[2]}
+    dog = Dog.new(dog_hash)
+    dog
+      
   end
 
 end
