@@ -79,8 +79,8 @@ class Dog
       dog = Dog.new(dog_hash)
     else
       dog = self.create(name, breed)
-      
-    
+    end
+    dog
   end
 
 end
