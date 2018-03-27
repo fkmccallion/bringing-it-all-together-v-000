@@ -60,7 +60,6 @@ class Dog
     SQL
 
     dog_array = DB[:conn].execute(sql, id).flatten
-
     dog = Dog.new(dog_array_to_hash(dog_array))
     dog
   end
