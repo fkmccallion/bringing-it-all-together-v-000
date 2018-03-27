@@ -71,7 +71,7 @@ class Dog
       FROM dogs
       WHERE name = ? AND breed = ?
     SQL
-    dog = DB[:conn].execute(sql, name, breed)
+    dog = DB[:conn].execute(sql, name, breed).flatten
 
     if !dog.empty?
       dog = Dog.new(dog_array_to_hash(dog))
