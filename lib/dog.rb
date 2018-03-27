@@ -73,10 +73,8 @@ class Dog
     SQL
     dog = DB[:conn].execute(sql, name, breed)
 
-    if !dog.empty?
-      dog_array = dog[0]
-      dog_hash = {:id => dog_array[0], :name => dog_array[1], :breed => dog_array[2]}
-      dog = Dog.new(dog_hash)
+    if !dog.empty?      
+      dog = Dog.new(dog_array_to_hash(dog_array))
     else
       dog = self.create(name: name, breed: breed)
     end
@@ -89,8 +87,7 @@ class Dog
   end
 
   def self.new_from_db(dog_array)
-Dog.new(dog_array_to_hash(dog_array))
-
+    Dog.new(dog_array_to_hash(dog_array))
   end
 
   def self.find_by_name(name)
