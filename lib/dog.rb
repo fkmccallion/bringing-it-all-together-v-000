@@ -63,6 +63,9 @@ class Dog
     dog_hash = {:id => dog_array[0], :name => dog_array[1], :breed => dog_array[2]}
     dog = Dog.new(dog_hash)
     dog
+  end
+
+  def self.find_or_create_by
 
   end
 
