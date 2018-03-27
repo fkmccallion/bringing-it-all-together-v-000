@@ -83,9 +83,13 @@ class Dog
     dog
   end
 
-  def self.new_from_db(dog_array)
+  def self.dog_array_to_hash(dog_array)
     dog_hash = {:id => dog_array[0], :name => dog_array[1], :breed => dog_array[2]}
-    dog = Dog.new(dog_hash)
+    dog_hash
+  end
+
+  def self.new_from_db(dog_array)
+    dog = Dog.new(dog_array_to_hash(dog_array))
     dog
   end
 
