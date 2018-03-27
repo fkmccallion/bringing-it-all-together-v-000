@@ -60,7 +60,7 @@ class Dog
     SQL
 
     dog_array = DB[:conn].execute(sql, id).flatten
-    dog_hash = {:id => dog[0], :name => dog[1], :breed => dog[2]}
+    dog_hash = {:id => dog_array[0], :name => dog_array[1], :breed => dog_array[2]}
     dog = Dog.new(dog_hash)
     dog
 
