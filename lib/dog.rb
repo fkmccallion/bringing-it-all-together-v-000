@@ -86,7 +86,7 @@ class Dog
   def self.new_from_db(dog_array)
     dog_hash = {:id => dog_array[0], :name => dog_array[1], :breed => dog_array[2]}
     dog = Dog.new(dog_hash)
-  dog
+    dog
   end
 
 end
