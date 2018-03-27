@@ -45,4 +45,11 @@ class Dog
     DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
 
+  def self.create(name, breed)
+    dog_hash {:name => name, :breed => breed}
+    dog = Dog.new(dog_hash)
+    dog.save
+    dog
+  end
+
 end
