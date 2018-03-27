@@ -63,7 +63,7 @@ class Dog
     dog_hash = {:id => dog[0], :name => dog[1], :breed => dog[2]}
     dog = Dog.new(dog_hash)
     dog
-      
+
   end
 
 end
